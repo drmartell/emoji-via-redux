@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Controls from '../components/controls/Controls';
-import Face from '../components/face/Face';
+import Controls from './controls/Controls';
+import Face from './face/Face';
 
 export const isTired = state => state.coffees < 1 && state.naps < 1;
 export const isHyper = state => state.coffees > 3;
@@ -19,12 +19,6 @@ export const getFace = state => {
 };
 
 export default class Moods extends Component {
-  state = {
-    coffees: 0,
-    snacks: 0,
-    naps: 0,
-    studies: 0
-  }
 
   handleSelection = action => {
     switch(action.type) {
