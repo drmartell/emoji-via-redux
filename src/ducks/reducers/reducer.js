@@ -12,6 +12,9 @@ const actionMap = {
   STUDY:        'studies'
 };
 
-const reducer = (state = initialState, { type }) => ({ ...state, [actionMap[type]]: state[actionMap[type]] + 1 });
+const reducer = (state = initialState, { type }) => {
+  const actionTarget = actionMap[type];
+  return ({ ...state, [actionTarget]: state[actionTarget] + 1 });
+};
 
 export default reducer;
