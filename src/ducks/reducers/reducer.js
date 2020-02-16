@@ -14,7 +14,7 @@ const actionMap = {
 
 const reducer = (state = initialState, { type }) => {
   const actionTarget = actionMap[type];
-  return ({ ...state, [actionTarget]: state[actionTarget] + 1 });
+  return actionTarget ? ({ ...state, [actionTarget]: state[actionTarget] + 1 }) : state;
 };
 
 export default reducer;
